@@ -2,6 +2,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
+var PropTypes = _interopDefault(require('prop-types'));
 
 var TableHead = function TableHead(_ref) {
   var columns = _ref.columns;
@@ -116,7 +117,7 @@ var DataTable = function DataTable(_ref) {
       setRows = _useState2[1];
 
   React.useEffect(function () {
-    setRows(show ? data.slice(0, show) : data);
+    setRows(show ? data.slice(0, show * 2) : data);
   }, [data, show]);
   React.useEffect(function () {
     var cols = columns || [];
@@ -152,6 +153,14 @@ var DataTable = function DataTable(_ref) {
   }));
 };
 
+DataTable.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array,
+  show: PropTypes.number,
+  className: PropTypes.string,
+  controller: PropTypes.func
+};
+
 var TableContainer = function TableContainer(_ref) {
   var title = _ref.title,
       children = _ref.children;
@@ -164,6 +173,10 @@ var TableContainer = function TableContainer(_ref) {
   }, title)), /*#__PURE__*/React__default.createElement("div", {
     className: "table-responsive"
   }, children));
+};
+
+TableContainer.propTypes = {
+  title: PropTypes.string
 };
 
 var ValueCard = function ValueCard(_ref) {
@@ -198,18 +211,37 @@ var ValueCard = function ValueCard(_ref) {
   }, subtitle)));
 };
 
+ValueCard.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.string]),
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  before: PropTypes.string,
+  after: PropTypes.string
+};
+
 var StatusDot = function StatusDot(_ref) {
-  var type = _ref.type,
+  var _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'success' : _ref$type,
       _ref$scale = _ref.scale,
-      scale = _ref$scale === void 0 ? 1 : _ref$scale;
-  return /*#__PURE__*/React__default.createElement("span", {
-    className: "badge badge-dot"
-  }, /*#__PURE__*/React__default.createElement("i", {
-    style: {
-      transform: "scale(" + scale + ")"
-    },
-    className: "bg-" + type
-  }));
+      scale = _ref$scale === void 0 ? 1 : _ref$scale,
+      className = _ref.className;
+  var style = {
+    transformOrigin: 'top left',
+    transform: "scale(" + scale + ")",
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%'
+  };
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: "bg-" + type + " " + className,
+    style: style
+  });
+};
+
+StatusDot.propTypes = {
+  scale: PropTypes.number,
+  type: PropTypes.oneOf(['success', 'danger', 'primary', 'secondary', 'warning', 'info', 'light', 'dark', 'white']),
+  className: PropTypes.string
 };
 
 exports.DataTable = DataTable;

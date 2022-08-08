@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import StatusDot from './StatusDot'
+
+<Meta title="UI Components/StatusDot" component={StatusDot} />
+
+# StatusDot
+
+export const Template = args => <StatusDot {...args} />
+
+### basic
+
+<Canvas>
+  <Story name="basic" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

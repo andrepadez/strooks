@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const TableContainer = ({ title, children }) => {
   return (
@@ -11,6 +12,10 @@ const TableContainer = ({ title, children }) => {
       <div className="table-responsive">{children}</div>
     </div>
   )
+}
+
+TableContainer.propTypes = {
+  title: PropTypes.string,
 }
 
 export default TableContainer

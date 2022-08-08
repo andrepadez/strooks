@@ -13,6 +13,10 @@ export const parameters = {
     default: 'twitter',
     values: [
       {
+        name: 'gray',
+        value: '#cccccc',
+      },
+      {
         name: 'twitter',
         value: '#00aced',
       },

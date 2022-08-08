@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ValueCard = ({ children, value, title, subtitle, before, after }) => {
   return (
@@ -18,6 +19,14 @@ const ValueCard = ({ children, value, title, subtitle, before, after }) => {
       </div>
     </div>
   )
+}
+
+ValueCard.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.string]),
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  before: PropTypes.string,
+  after: PropTypes.string,
 }
 
 export default ValueCard

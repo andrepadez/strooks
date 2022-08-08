@@ -1,14 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react'
 import TableHead from './TableHead'
 import TableBody from './TableBody'
 
-const DataTable = ({ title, data, columns, show, className, controller }) => {
+const DataTable = ({ data, columns, show, className, controller }) => {
   const [cols, setCols] = useState()
   const [rows, setRows] = useState()
 
   useEffect(() => {
-    setRows(show ? data.slice(0, show) : data)
+    setRows(show ? data.slice(0, show * 2) : data)
   }, [data, show])
 
   useEffect(() => {
@@ -29,6 +30,14 @@ const DataTable = ({ title, data, columns, show, className, controller }) => {
       {cols && rows && <TableBody data={rows} columns={cols} controller={controller} />}
     </table>
   )
+}
+
+DataTable.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array,
+  show: PropTypes.number,
+  className: PropTypes.string,
+  controller: PropTypes.func,
 }
 
 export default DataTable

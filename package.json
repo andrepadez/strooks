@@ -21,7 +21,7 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "deploy": "gh-pages -d storybook-static",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -66,6 +66,7 @@
     "dist"
   ],
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0"
   }
 }
