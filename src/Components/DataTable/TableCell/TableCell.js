@@ -13,7 +13,7 @@ TableCell.propTypes = {
   value: PropTypes.string,
   row: PropTypes.object,
   data: PropTypes.array,
-  format: PropTypes.fn,
+  format: PropTypes.func,
   column: PropTypes.object,
 }
 
