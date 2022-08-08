@@ -165,7 +165,8 @@ var TableContainer = function TableContainer(_ref) {
 };
 
 var ValueCard = function ValueCard(_ref) {
-  var value = _ref.value,
+  var children = _ref.children,
+      value = _ref.value,
       title = _ref.title,
       subtitle = _ref.subtitle,
       before = _ref.before,

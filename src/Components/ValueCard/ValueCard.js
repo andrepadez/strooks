@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ValueCard = ({ value, title, subtitle, before, after }) => {
+const ValueCard = ({ children, value, title, subtitle, before, after }) => {
   return (
     <div className="card leads-card">
       <div className=" card-body text-center">
