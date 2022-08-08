@@ -1,3 +1,5 @@
+import React from 'react'
+
 const RowControls = ({ onClick }) => {
   return (
     <div onClick={onClick} className="controls flex gap-3 align-center">

@@ -1,3 +1,5 @@
+import React from 'react'
+
 const TableHead = ({ columns }) => {
   return (
     <thead className="thead-light">

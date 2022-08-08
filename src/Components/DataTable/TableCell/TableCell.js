@@ -1,3 +1,5 @@
+import React from 'react'
+
 const TableCell = ({ value, row, data, format, column }) => {
   return format ? (
     <td className={column.className}>{format(value, row, data)}</td>
