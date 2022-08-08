@@ -1,3 +1,5 @@
+import React from 'react'
+
 const StatusDot = ({ type, scale = 1 }) => {
   return (
     <span className="badge badge-dot">

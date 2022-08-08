@@ -1,3 +1,5 @@
+import React from 'react'
+
 const TableContainer = ({ title, children }) => {
   return (
     <div className="card data-table">

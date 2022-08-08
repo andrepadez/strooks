@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 var TableHead = function TableHead(_ref) {
   var columns = _ref.columns;
@@ -150,5 +150,64 @@ var DataTable = function DataTable(_ref) {
   }));
 };
 
-export { DataTable };
+var TableContainer = function TableContainer(_ref) {
+  var title = _ref.title,
+      children = _ref.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "card data-table"
+  }, title && /*#__PURE__*/React.createElement("div", {
+    className: "card-header border-0"
+  }, /*#__PURE__*/React.createElement("h4", {
+    className: "mb-0"
+  }, title)), /*#__PURE__*/React.createElement("div", {
+    className: "table-responsive"
+  }, children));
+};
+
+var ValueCard = function ValueCard(_ref) {
+  var value = _ref.value,
+      title = _ref.title,
+      subtitle = _ref.subtitle,
+      before = _ref.before,
+      after = _ref.after;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "card leads-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: " card-body text-center"
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "text-gradient text-primary"
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.7em'
+    },
+    className: "ms-n1"
+  }, before), /*#__PURE__*/React.createElement("span", {
+    id: "status2"
+  }, children ? children : value), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.7em'
+    },
+    className: "ms-n1"
+  }, after)), /*#__PURE__*/React.createElement("h6", {
+    className: "mb-0 font-weight-bolder"
+  }, title), subtitle && /*#__PURE__*/React.createElement("p", {
+    className: "opacity-8 mb-0 text-sm"
+  }, subtitle)));
+};
+
+var StatusDot = function StatusDot(_ref) {
+  var type = _ref.type,
+      _ref$scale = _ref.scale,
+      scale = _ref$scale === void 0 ? 1 : _ref$scale;
+  return /*#__PURE__*/React.createElement("span", {
+    className: "badge badge-dot"
+  }, /*#__PURE__*/React.createElement("i", {
+    style: {
+      transform: "scale(" + scale + ")"
+    },
+    className: "bg-" + type
+  }));
+};
+
+export { DataTable, TableContainer as DataTableContainer, StatusDot, ValueCard };
 //# sourceMappingURL=index.modern.js.map
