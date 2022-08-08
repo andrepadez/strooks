@@ -116,7 +116,7 @@ var DataTable = function DataTable(_ref) {
       setRows = _useState2[1];
 
   React.useEffect(function () {
-    setRows(data);
+    setRows(show ? data.slice(0, show) : data);
   }, [data, show]);
   React.useEffect(function () {
     var cols = columns || [];
@@ -140,7 +140,6 @@ var DataTable = function DataTable(_ref) {
     setCols(cols);
   }, [columns]);
   if (!data || !cols) return null;
-  data = show ? data.slice(0, show) : data;
   return /*#__PURE__*/React__default.createElement("table", {
     className: className + " table"
   }, cols && /*#__PURE__*/React__default.createElement(TableHead, {

@@ -8,7 +8,7 @@ const DataTable = ({ title, data, columns, show, className, controller }) => {
   const [rows, setRows] = useState()
 
   useEffect(() => {
-    setRows(data)
+    setRows(show ? data.slice(0, show) : data)
   }, [data, show])
 
   useEffect(() => {
@@ -22,7 +22,6 @@ const DataTable = ({ title, data, columns, show, className, controller }) => {
   }, [columns])
 
   if (!data || !cols) return null
-  data = show ? data.slice(0, show) : data
 
   return (
     <table className={`${className} table`}>
