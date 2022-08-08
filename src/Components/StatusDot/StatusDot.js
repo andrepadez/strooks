@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const StatusDot = ({ type = 'success', scale = 1, className }) => {
+const StatusDot = ({ type = 'success', scale = 1, className = '' }) => {
   const style = {
     transformOrigin: 'top left',
     transform: `scale(${scale})`,

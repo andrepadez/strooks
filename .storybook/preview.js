@@ -10,7 +10,7 @@ export const parameters = {
     },
   },
   backgrounds: {
-    default: 'twitter',
+    default: 'gray',
     values: [
       {
         name: 'gray',
