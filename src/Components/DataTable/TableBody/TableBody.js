@@ -18,7 +18,7 @@ const TableBody = ({ data, columns, controller }) => {
 TableBody.propTypes = {
   data: PropTypes.array.isRequired,
   columns: PropTypes.array.isRequired,
-  controller: PropTypes.fn,
+  controller: PropTypes.func,
 }
 
 export default TableBody

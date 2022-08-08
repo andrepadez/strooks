@@ -11,7 +11,7 @@ const RowControls = ({ onClick }) => {
 }
 
 RowControls.propTypes = {
-  onClick: PropTypes.fn.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default RowControls

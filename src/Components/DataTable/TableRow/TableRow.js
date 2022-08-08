@@ -44,7 +44,7 @@ TableRow.propTypes = {
   row: PropTypes.object.isRequired,
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
-  controller: PropTypes.fn,
+  controller: PropTypes.func,
 }
 
 export default TableRow
