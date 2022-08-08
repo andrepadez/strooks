@@ -16,6 +16,7 @@ const TableContainer = ({ title, children }) => {
 
 TableContainer.propTypes = {
   title: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default TableContainer

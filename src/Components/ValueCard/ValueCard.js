@@ -27,6 +27,7 @@ ValueCard.propTypes = {
   subtitle: PropTypes.string,
   before: PropTypes.string,
   after: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default ValueCard

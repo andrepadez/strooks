@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import TableRow from '../TableRow'
 
-const TableBody = ({ data, columns, className, controller }) => {
+const TableBody = ({ data, columns, controller }) => {
   return (
     <tbody>
       {data.map((row, idx) => {
@@ -12,6 +13,12 @@ const TableBody = ({ data, columns, className, controller }) => {
       })}
     </tbody>
   )
+}
+
+TableBody.propTypes = {
+  data: PropTypes.array.isRequired,
+  columns: PropTypes.array.isRequired,
+  controller: PropTypes.fn,
 }
 
 export default TableBody

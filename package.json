@@ -4,7 +4,7 @@
   "description": "dope Components and Hooks for React",
   "author": "andrepadez",
   "license": "MIT",
-  "repository": "strooks/strooks",
+  "repository": "andrepadez/strooks",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -20,7 +20,7 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
+    "predeploy": "run-s test build-storybook",
     "deploy": "gh-pages -d storybook-static",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -49,7 +49,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.10",
@@ -66,6 +66,7 @@
     "dist"
   ],
   "dependencies": {
+    "@storybook/preset-create-react-app": "^4.1.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0"
   }

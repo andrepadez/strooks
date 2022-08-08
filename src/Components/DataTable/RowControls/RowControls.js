@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const RowControls = ({ onClick }) => {
   return (
@@ -7,6 +8,10 @@ const RowControls = ({ onClick }) => {
       <i className="ni ni-fat-remove" role="delete"></i>
     </div>
   )
+}
+
+RowControls.propTypes = {
+  onClick: PropTypes.fn.isRequired,
 }
 
 export default RowControls

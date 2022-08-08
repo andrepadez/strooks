@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import TableCell from '../TableCell'
 import RowControls from '../RowControls'
 
@@ -11,8 +12,8 @@ const TableRow = ({ row, columns, data, controller }) => {
       {columns.map((col, idx) => {
         let value = typeof col === 'string' ? row[col] : row[col.field]
 
-        const path = col.field?.split('.')
-        if (path?.length > 1) {
+        const path = col.field && col.field.split('.')
+        if (path && path.length > 1) {
           value = row[path.shift()]
           while (value && path.length) {
             value = value[path.shift()]
@@ -37,6 +38,13 @@ const TableRow = ({ row, columns, data, controller }) => {
       )}
     </tr>
   )
+}
+
+TableRow.propTypes = {
+  row: PropTypes.object.isRequired,
+  columns: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  controller: PropTypes.fn,
 }
 
 export default TableRow
